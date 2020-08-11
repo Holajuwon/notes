@@ -1,9 +1,7 @@
 const { parse } = require("url");
 const {
-  homePage,
   createNotes,
   getNote,
-  errorPage,
   deleteNote,
   updateNote,
   getSummary,
@@ -15,13 +13,10 @@ module.exports = (req, res) => {
 
   if (pathname === "/note/" && method === "GET") {
     getNote(req, res);
-    // info(200, method + " " + url);
   } else if (pathname === "/note/summary" && method === "GET") {
     getSummary(req, res);
-    // info(200, method + " " + url);
   } else if (pathname === "/note" && method === "POST") {
     createNotes(req, res);
-    // info(201, method + " " + url);
   } else if (pathname === "/note" && method === "DELETE") {
     deleteNote(req, res);
   } else if (pathname === "/note" && method === "PUT") {
